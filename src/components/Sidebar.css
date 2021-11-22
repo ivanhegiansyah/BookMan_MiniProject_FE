@@ -1,0 +1,22 @@
+.nav-link:hover {
+  color: #ffff !important;
+  background-color: #525252 !important;
+}
+
+.active {
+  color: #0a150f !important;
+  background-color: #97f675 !important;
+}
+
+.logo {
+  width: 22px;
+  margin-right: 10px;
+}
+
+/* .nav-link .fa {
+    transition: all 1s
+}
+
+.nav-link:hover .fa {
+    transform: rotate(360deg)
+} */
