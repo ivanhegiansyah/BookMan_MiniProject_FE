@@ -8,7 +8,8 @@
   font-weight: 500;
 }
 .banner-home {
-  width: 35em;
+  width: 38em;
+  margin-left: 2em;
 }
 .subtitle-banner {
   font-size: 24px;
@@ -25,7 +26,7 @@
 }
 
 /* hp */
-@media only screen and (max-width: 844px) {
+/* @media only screen and (max-width: 844px) {
   .home-banner-title {
     margin-left: 20px;
     font-size: 26px;
@@ -48,4 +49,4 @@
     width: 370px;
     margin-bottom: 80px;
   }
-}
+} */
