@@ -68,12 +68,12 @@ export default function Form(props) {
           price: data.price,
         },
       });
-      navigate("/");
+      navigate("/list-book");
     }
   };
 
   return (
-    <div className="col-sm-7 col-md-7" style={{ padding: "5em 6em" }}>
+    <div className="col-sm-9 col-md-9 mt-4">
       <form onSubmit={onSubmit}>
         <div className="pb-3">
           <label className="form-label" htmlFor="title">
@@ -149,7 +149,7 @@ export default function Form(props) {
 
         <button
           type="submit"
-          className="btn text-white mt-2"
+          className="btn text-white mt-3"
           style={{ backgroundColor: "#1f332b" }}
         >
           Submit

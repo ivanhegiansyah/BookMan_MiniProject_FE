@@ -1,21 +1,12 @@
 import "./Sidebar.css";
 import logo from "../assets/img/Logo.png";
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
-  const temp = {
-    active: "",
-  };
-  const [status, setStatus] = useState(temp);
-
-  // const handleStatus = () => {
-
-  // }
-
   return (
     <>
       <div
-        className="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark"
+        className="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark position-fixed"
         style={{ width: "250px" }}
         id="v-pills-tab"
         role="tablist"
@@ -32,54 +23,22 @@ export default function Sidebar() {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto text-center">
           <li className="nav-item">
-            <a
-              href="/"
-              className={`nav-link text-white ${status.active}`}
-              aria-current="page"
-              // id="v-pills-home-tab"
-              // data-bs-toggle="pill"
-              // data-bs-target="#v-pills-home"
-              // type="button"
-              // role="tab"
-              // aria-controls="v-pills-home"
-              // aria-selected="true"
-            >
+            <NavLink to="/" className="nav-link text-white" aria-current="page">
               <i className="fa fa-home" />
               <span className="ms-2">Home</span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="/add-book"
-              // onClick={() => setStatus({ active: "active" })}
-              className={`nav-link text-white ${status.active}`}
-              // id="v-pills-add-tab"
-              // data-bs-toggle="pill"
-              // data-bs-target="/add-book"
-              // type="button"
-              // role="button"
-              // aria-controls="v-pills-add"
-              // aria-selected="false"
-            >
+            <NavLink to="/add-book" className="nav-link text-white">
               <i className="fa fa-add" />
               <span className="ms-2">Add Book</span>
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="/"
-              className={`nav-link text-white ${status.active}`}
-              // id="v-pills-list-tab"
-              // data-bs-toggle="pill"
-              // data-bs-target="#v-pills-list"
-              // type="button"
-              // role="tab"
-              // aria-controls="v-pills-list"
-              // aria-selected="false"
-            >
+            <NavLink to="/list-book" className="nav-link text-white">
               <i className="fa fa-list" />
               <span className="ms-2">List Book</span>
-            </a>
+            </NavLink>
           </li>
         </ul>
         <hr />

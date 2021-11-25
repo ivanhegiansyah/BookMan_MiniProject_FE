@@ -21,3 +21,11 @@ export const AddBook = gql`
     }
   }
 `;
+
+export const DeleteBook = gql`
+  mutation MyMutation($id: Int!) {
+    delete_bookman_books_by_pk(id: $id) {
+      id
+    }
+  }
+`;

@@ -1,23 +1,27 @@
 import banner from "../../assets/img/accept-tasks-animate.svg";
 import "./Home.css";
 import Sidebar from "../../components/Sidebar";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <div className="container-fluid home">
-      <div className="row flex-nowrap align-items-center">
+      <div className="row d-flex">
         <div className="col-md-3 px-0">
           <Sidebar />
         </div>
-        <div className="col-md-3">
+        <div className="col-md-3 my-auto">
           <div className="banner">
             <h4 className="home-banner-title">Manage Your Book</h4>
             <h5 className="subtitle-banner">
               Add, update, and delete your book easily!
             </h5>
-            <button className="btn btn-outline-success mt-4 add-button">
+            <Link
+              to="/add-book"
+              className="btn btn-outline-success mt-4 add-button"
+            >
               Add Book
-            </button>
+            </Link>
           </div>
         </div>
         <div className="col-md-6">
