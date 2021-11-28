@@ -14,7 +14,13 @@ export default function ListBook(props) {
             <h2 className="fw-bold text-center">List Book</h2>
             <div className="row mt-5">
               {props.data?.bookman_books.map((item) => (
-                <Card key={item.id} data={item} deleteBook={props.deleteBook} />
+                <Card
+                  key={item.id}
+                  data={item}
+                  deleteBook={props.deleteBook}
+                  updateQuantity={props.updateQuantity}
+                  updateBook={props.updateBook}
+                />
               ))}
             </div>
           </div>

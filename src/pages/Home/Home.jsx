@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div className="container-fluid home">
-      <div className="row d-flex">
+      <div className="row">
         <div className="col-md-3 px-0">
           <Sidebar />
         </div>

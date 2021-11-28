@@ -1,7 +1,24 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import Modals from "./Modals";
 
 export default function Card(props) {
   const { id, title, author, publisher, quantity, price } = props.data;
+  const [quan, setQuan] = useState(quantity);
+
+  const handleMinusQuantity = () => {
+    console.log(id);
+    console.log(quan);
+    setQuan((quan) => quan - 1);
+    console.log(quan);
+    props.updateQuantity(id, quan - 1);
+  };
+
+  const handlePlusQuantity = () => {
+    setQuan((quan) => quan + 1);
+    console.log(quan);
+    props.updateQuantity(id, quan + 1);
+  };
+
   return (
     <div className="col-sm-4 mb-3">
       <div className="card border-dark mb-3 h-100" style={{ width: "17rem" }}>
@@ -14,21 +31,22 @@ export default function Card(props) {
             <button
               className="btn btn-outline-dark btn-sm py-0"
               style={{ marginLeft: "5em" }}
+              onClick={handleMinusQuantity}
             >
               -
             </button>
-            <button className="btn btn-outline-dark btn-sm py-0 ms-1">+</button>
+            <button
+              className="btn btn-outline-dark btn-sm py-0 ms-1"
+              onClick={handlePlusQuantity}
+            >
+              +
+            </button>
           </p>
           <p className="card-text">Price: {price}</p>
           <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-            <Link
-              to="/"
-              className="btn text-white mt-2"
-              style={{ backgroundColor: "#1f332b" }}
-            >
-              Edit
-            </Link>
-
+            <div>
+              <Modals data={props.data} updateBook={props.updateBook} />
+            </div>
             <button
               className="btn btn-danger mt-2"
               onClick={() => {

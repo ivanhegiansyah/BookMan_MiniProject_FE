@@ -29,3 +29,38 @@ export const DeleteBook = gql`
     }
   }
 `;
+
+export const UpdateBook = gql`
+  mutation MyMutation(
+    $id: Int!
+    $title: String!
+    $author: String!
+    $publisher: String!
+    $quantity: Int!
+    $price: Int!
+  ) {
+    update_bookman_books_by_pk(
+      pk_columns: { id: $id }
+      _set: {
+        title: $title
+        author: $author
+        publisher: $publisher
+        quantity: $quantity
+        price: $price
+      }
+    ) {
+      id
+    }
+  }
+`;
+
+export const UpdateQuantity = gql`
+  mutation MyMutation($id: Int!, $quantity: Int!) {
+    update_bookman_books_by_pk(
+      pk_columns: { id: $id }
+      _set: { quantity: $quantity }
+    ) {
+      id
+    }
+  }
+`;

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import "./Form.css";
 
-export default function Form(props) {
+export default function FormInput(props) {
   const navigate = useNavigate();
   const baseData = {
     title: "",
@@ -25,9 +26,7 @@ export default function Form(props) {
     setErrorMessage(() => {
       const errorMessageArr = Object.keys(errorMessage).map((key) => {
         if (data[key] === "") {
-          const err = `${
-            key.charAt(0).toUpperCase() + key.slice(1)
-          } cannot be empty`;
+          const err = `${key} cannot be empty`;
 
           return { [key]: err };
         }
@@ -77,7 +76,7 @@ export default function Form(props) {
       <form onSubmit={onSubmit}>
         <div className="pb-3">
           <label className="form-label" htmlFor="title">
-            Book Name <span className="text-danger">*</span>
+            Book Name
           </label>
           <input
             className="form-control"
@@ -91,7 +90,7 @@ export default function Form(props) {
         </div>
         <div className="pb-3">
           <label className="form-label" htmlFor="author">
-            Author <span className="text-danger">*</span>
+            Author
           </label>
           <input
             className="form-control"
@@ -105,7 +104,7 @@ export default function Form(props) {
         </div>
         <div className="pb-3">
           <label className="form-label" htmlFor="publisher">
-            Publisher <span className="text-danger">*</span>
+            Publisher
           </label>
           <input
             className="form-control"
@@ -119,7 +118,7 @@ export default function Form(props) {
         </div>
         <div className="pb-3">
           <label className="form-label" htmlFor="quantity">
-            Quantity <span className="text-danger">*</span>
+            Quantity
           </label>
           <input
             className="form-control"
@@ -134,7 +133,7 @@ export default function Form(props) {
 
         <div className="pb-3">
           <label className="form-label" htmlFor="price">
-            Book Price <span className="text-danger">*</span>
+            Book Price
           </label>
           <input
             className="form-control"
@@ -149,7 +148,7 @@ export default function Form(props) {
 
         <button
           type="submit"
-          className="btn text-white mt-3"
+          className="btn text-white mt-3 btn-submit"
           style={{ backgroundColor: "#1f332b" }}
         >
           Submit
