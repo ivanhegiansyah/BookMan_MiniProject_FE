@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import "./Form.css";
-import { app } from "../firebase/config";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "../firebase/config";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default function FormEdit(props) {
   const {
@@ -68,8 +68,7 @@ export default function FormEdit(props) {
 
   const onChangeImage = (e) => {
     const file = e.target.files[0];
-    const storageRef = getStorage();
-    const fileRef = ref(storageRef, file.name);
+    const fileRef = ref(storage, file.name);
     uploadBytes(fileRef, file).then(() => {
       getDownloadURL(fileRef).then((url) => {
         setData({ ...data, image: url });
