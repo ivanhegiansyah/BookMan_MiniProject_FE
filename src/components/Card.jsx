@@ -1,7 +1,7 @@
 import Modals from "./Modals";
 
 export default function Card(props) {
-  const { id, title, author, publisher, quantity, price } = props.data;
+  const { id, title, author, publisher, quantity, price, images } = props.data;
 
   const handleMinusQuantity = () => {
     props.updateQuantity(id, quantity - 1);
@@ -14,6 +14,12 @@ export default function Card(props) {
   return (
     <div className="col-sm-4 mb-3">
       <div className="card border-dark mb-3 h-100" style={{ width: "17rem" }}>
+        <img
+          src={images}
+          className="card-img-top"
+          alt="cover-gambar"
+          style={{ height: "15em" }}
+        />
         <div className="card-body text-dark">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">Author: {author}</p>

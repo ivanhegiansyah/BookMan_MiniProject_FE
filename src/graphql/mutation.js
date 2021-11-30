@@ -7,6 +7,7 @@ export const AddBook = gql`
     $publisher: String!
     $quantity: Int!
     $price: Int!
+    $images: String!
   ) {
     insert_bookman_books_one(
       object: {
@@ -15,6 +16,7 @@ export const AddBook = gql`
         publisher: $publisher
         quantity: $quantity
         price: $price
+        images: $images
       }
     ) {
       id
@@ -38,6 +40,7 @@ export const UpdateBook = gql`
     $publisher: String!
     $quantity: Int!
     $price: Int!
+    $images: String!
   ) {
     update_bookman_books_by_pk(
       pk_columns: { id: $id }
@@ -47,6 +50,7 @@ export const UpdateBook = gql`
         publisher: $publisher
         quantity: $quantity
         price: $price
+        images: $images
       }
     ) {
       id

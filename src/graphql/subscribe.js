@@ -9,6 +9,7 @@ export const SubscribeBook = gql`
       publisher
       quantity
       price
+      images
     }
   }
 `;

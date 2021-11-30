@@ -4,7 +4,7 @@ import { UpdateBook } from "../graphql/mutation";
 export default function useUpdateBook() {
   const [updateBook, { loading: loadingUpdate }] = useMutation(UpdateBook);
 
-  const editBook = (idx, Title, Author, Publisher, Quantity, Price) => {
+  const editBook = (idx, Title, Author, Publisher, Quantity, Price, Images) => {
     updateBook({
       variables: {
         id: idx,
@@ -13,6 +13,7 @@ export default function useUpdateBook() {
         publisher: Publisher,
         quantity: Quantity,
         price: Price,
+        images: Images,
       },
     });
   };
