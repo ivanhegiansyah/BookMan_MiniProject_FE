@@ -1,22 +1,14 @@
-import { useState } from "react";
 import Modals from "./Modals";
 
 export default function Card(props) {
   const { id, title, author, publisher, quantity, price } = props.data;
-  const [quan, setQuan] = useState(quantity);
 
   const handleMinusQuantity = () => {
-    console.log(id);
-    console.log(quan);
-    setQuan((quan) => quan - 1);
-    console.log(quan);
-    props.updateQuantity(id, quan - 1);
+    props.updateQuantity(id, quantity - 1);
   };
 
   const handlePlusQuantity = () => {
-    setQuan((quan) => quan + 1);
-    console.log(quan);
-    props.updateQuantity(id, quan + 1);
+    props.updateQuantity(id, quantity + 1);
   };
 
   return (

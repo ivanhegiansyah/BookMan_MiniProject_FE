@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import InputBook from "../pages/InputBook/InputBook";
+import NotFound from "../pages/NotFound/NotFound";
 import useSubscribeBook from "../hooks/useSubscribeBook";
 import useAddBook from "../hooks/useAddBook";
 import useDeleteBook from "../hooks/useDeleteBook";
@@ -46,6 +47,7 @@ export default function Router() {
             />
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

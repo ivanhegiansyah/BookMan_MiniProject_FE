@@ -3,16 +3,23 @@ import { useNavigate } from "react-router";
 import "./Form.css";
 
 export default function FormEdit(props) {
-  const { id: idx } = props.datas;
+  const {
+    id: idx,
+    title: titlex,
+    author: authorx,
+    publisher: publisherx,
+    quantity: quanitityx,
+    price: pricex,
+  } = props.datas;
 
   const navigate = useNavigate();
   const baseData = {
-    id: "",
-    title: "",
-    author: "",
-    publisher: "",
-    quantity: "",
-    price: "",
+    id: idx,
+    title: titlex,
+    author: authorx,
+    publisher: publisherx,
+    quantity: quanitityx,
+    price: pricex,
   };
   const baseError = {
     title: "",
@@ -29,6 +36,7 @@ export default function FormEdit(props) {
     setErrorMessage(() => {
       const errorMessageArr = Object.keys(errorMessage).map((key) => {
         if (data[key] === "") {
+          console.log(data[key]);
           const err = `${key} cannot be empty`;
 
           return { [key]: err };
@@ -58,7 +66,7 @@ export default function FormEdit(props) {
     e.preventDefault();
     const validField = Object.keys(data).filter((key) => data[key] !== "");
 
-    if (validField.length < 5) {
+    if (validField.length < 6) {
       validateOnSubmit();
     } else {
       props.updateBook(
@@ -69,8 +77,6 @@ export default function FormEdit(props) {
         data.quantity,
         data.price
       );
-      console.log(idx);
-      console.log(data.quantity);
 
       navigate("/list-book");
     }

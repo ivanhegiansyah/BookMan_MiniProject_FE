@@ -55,7 +55,7 @@ export default function FormInput(props) {
     e.preventDefault();
     const validField = Object.keys(data).filter((key) => data[key] !== "");
 
-    if (validField.length < 5) {
+    if (validField.length < 6) {
       validateOnSubmit();
     } else {
       props.addBook({
