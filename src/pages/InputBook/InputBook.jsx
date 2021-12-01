@@ -1,10 +1,10 @@
 import Sidebar from "../../components/Sidebar";
 import FormInput from "../../components/FormInput";
-import styles from "./InputBook.module.css";
+
 export default function InputBook(props) {
   return (
     <>
-      <div className={`container-fluid ${styles.cover}`}>
+      <div className="container-fluid">
         <div className="row d-flex">
           <div className="col-md-3 px-0">
             <Sidebar />

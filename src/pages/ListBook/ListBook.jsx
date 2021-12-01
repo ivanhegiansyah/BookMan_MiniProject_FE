@@ -1,11 +1,10 @@
 import Sidebar from "../../components/Sidebar";
 import Card from "../../components/Card";
-import styles from "./ListBook.module.css";
 
 export default function ListBook(props) {
   return (
     <>
-      <div className={`${styles.cover} container-fluid`}>
+      <div className="container-fluid">
         <div className="row d-flex">
           <div className="col-md-3 px-0">
             <Sidebar />
